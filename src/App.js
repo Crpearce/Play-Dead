@@ -50,7 +50,7 @@ function App() {
           <button onClick={logout}>Logout</button>
         )}
       </header>
-      <Footer /> 
+      <Footer  /> 
     </div>
   );
 }
