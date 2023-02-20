@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar.component";
+import Album from "./components/album/album.component";
 import Footer from "./components/footer/footer.component";
+import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
   const RESPONSE_TYPE = "token";
 
   const [token, setToken] = useState("");
+  const [searchKey, setSearchKey] = useState("");
+  const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -23,7 +27,6 @@ function App() {
         .split("=")[1];
 
       window.location.hash = "";
-      console.log(token);
       window.localStorage.setItem("token", token);
     }
 
@@ -33,6 +36,21 @@ function App() {
   const logout = () => {
     setToken("");
     window.localStorage.removeItem("token");
+  };
+
+  const searchArtists = async (e) => {
+    e.preventDefault();
+    const { data } = await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: {
+        q: searchKey,
+        type: "album",
+      },
+    });
+    console.log(data)
+    setAlbums(data.albums.items);
   };
 
   return (
@@ -50,7 +68,12 @@ function App() {
           <button onClick={logout}>Logout</button>
         )}
       </header>
-      <Footer  /> 
+      <form onSubmit={searchArtists}>
+        <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
+        <button type={"submit"}>Search</button>
+      </form>
+      <Album albums={albums}/>
+      <Footer />
     </div>
   );
 }
