@@ -1,4 +1,3 @@
-import roses from "../../assets/roses.png";
 import "./navbar.styles.css";
 
 const Navbar = () => {
