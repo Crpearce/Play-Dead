@@ -33,8 +33,8 @@ const Album = ({ albums }) => {
       </div>
       {album && (
         <div className="album-details">
-          <h3>{album.name}</h3>
-          <a>Tracks: {album.total_tracks}</a>
+          <h3 className="album-name">{album.name}</h3>
+          <a className="album-tracks">Tracks:{album.total_tracks}</a>
           <br />
         </div>
       )}

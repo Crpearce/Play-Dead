@@ -3,8 +3,8 @@
 }
 
 .nav-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -16,6 +16,9 @@ button:hover {
   background: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
 }
 
+header {
+  margin-left: 15vw;
+}
 
 @keyframes App-logo-spin {
   from {
