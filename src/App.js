@@ -73,11 +73,11 @@ function App() {
         </header>
       </div>
       <Album albums={albums} />
-      <form onSubmit={searchArtists}>
+      {albums.length === 0 && <form onSubmit={searchArtists}>
         <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>
           Get Album
         </button>
-      </form>
+      </form>}
       <Footer />
     </div>
   );
