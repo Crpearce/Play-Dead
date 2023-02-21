@@ -47,12 +47,12 @@ function App() {
       params: {
         q: searchKey,
         type: "album",
+        limit: 35
       },
     });
     console.log(data);
     setAlbums(data.albums.items);
   };
-  
 
   return (
     <div className="App">
@@ -70,11 +70,12 @@ function App() {
           )}
         </header>
       </div>
-      <form onSubmit={searchArtists}>
-        {/* <input type="text" onChange={(e) => setSearchKey(e.target.value)} /> */}
-        <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>Get Album</button>
-      </form>
       <Album albums={albums} />
+      <form onSubmit={searchArtists}>
+        <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>
+          Get Album
+        </button>
+      </form>
       <Footer />
     </div>
   );

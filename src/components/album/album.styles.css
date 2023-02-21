@@ -1,0 +1,11 @@
+.album-container {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.album-cover {
+    border-radius: 5%;
+    margin-top:18vh;
+    height: 25vh;
+}
