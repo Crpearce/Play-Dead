@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar.component";
 import Album from "./components/album/album.component";
 import Footer from "./components/footer/footer.component";
+
 import axios from "axios";
 import "./App.css";
 
