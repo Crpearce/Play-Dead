@@ -1,4 +1,5 @@
 import skull from "../../assets/skull.png";
+import { Link } from "react-router-dom";
 import "./album.styles.css";
 
 const Album = ({ albums }) => {
@@ -10,17 +11,34 @@ const Album = ({ albums }) => {
   console.log(album);
 
   return (
-    <div
-      className="album-container"
-      style={{
-        backgroundImage: `url(${skull})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "100vh",
-      }}
-    >
-      {album && <img src={album.images[0].url} alt="album-cover"  className="album-cover"/>}
-    </div>
+    <section>
+      <div
+        className="album-container"
+        style={{
+          backgroundImage: `url(${skull})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "100vh",
+        }}
+      >
+        {album && (
+          <a href={`${album.external_urls.spotify}`} target="_blank">
+            <img
+              src={album.images[0].url}
+              alt="album-cover"
+              className="album-cover"
+            />
+          </a>
+        )}
+      </div>
+      {album && (
+        <div className="album-details">
+          <h3>{album.name}</h3>
+          <a>Tracks: {album.total_tracks}</a>
+          <br />
+        </div>
+      )}
+    </section>
   );
 };
 

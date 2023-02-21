@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar.component";
 import Album from "./components/album/album.component";
 import Footer from "./components/footer/footer.component";
+
 import axios from "axios";
 import "./App.css";
 
 function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://vercel.com/crpearce/play-dead";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
