@@ -9,7 +9,7 @@ import "./App.css";
 function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
   //try again
-  const REDIRECT_URI = "https://vercel.com/crpearce/play-dead";
+  const REDIRECT_URI = "https://play-dead.vercel.app/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
