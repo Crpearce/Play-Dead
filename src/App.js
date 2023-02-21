@@ -49,30 +49,32 @@ function App() {
         type: "album",
       },
     });
-    console.log(data)
+    console.log(data);
     setAlbums(data.albums.items);
   };
+  
 
   return (
     <div className="App">
-      <Navbar />
-      <header className="App-header">
-        <h1>Spotify React</h1>
-        {!token ? (
-          <a
-            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-          >
-            Login to Spotify
-          </a>
-        ) : (
-          <button onClick={logout}>Logout</button>
-        )}
-      </header>
+      <div className="nav-container">
+        <Navbar />
+        <header className="App-header">
+          {!token ? (
+            <a
+              href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            >
+              Login to Spotify
+            </a>
+          ) : (
+            <button onClick={logout}>Logout</button>
+          )}
+        </header>
+      </div>
       <form onSubmit={searchArtists}>
-        <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-        <button type={"submit"}>Search</button>
+        {/* <input type="text" onChange={(e) => setSearchKey(e.target.value)} /> */}
+        <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>Get Album</button>
       </form>
-      <Album albums={albums}/>
+      <Album albums={albums} />
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import "./navbar.styles.css";
 const Navbar = () => {
     return (
         <div>
-            Navbar
+            <h1>One from the Vault</h1>
         </div>
     );
 }
