@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar.component";
 import Album from "./components/album/album.component";
 import Footer from "./components/footer/footer.component";
-
 import axios from "axios";
 import "./App.css";
 
 function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
-  //try again
-  const REDIRECT_URI = "https://play-dead.vercel.app/";
+  // "http://localhost:3000"
+  // "https://play-dead.vercel.app/"
+  const REDIRECT_URI = "http://localhost:3000";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
@@ -49,7 +49,7 @@ function App() {
       params: {
         q: searchKey,
         type: "album",
-        limit: 35
+        limit: 35,
       },
     });
     console.log(data);
@@ -58,7 +58,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="nav-container">
+      <div
+        className="nav-container"
+      >
         <Navbar />
         <header className="App-header">
           {!token ? (
@@ -73,11 +75,13 @@ function App() {
         </header>
       </div>
       <Album albums={albums} />
-      {albums.length === 0 && <form onSubmit={searchArtists}>
-        <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>
-          Get Album
-        </button>
-      </form>}
+      {albums.length === 0 && (
+        <form onSubmit={searchArtists}>
+          <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>
+            Get Album
+          </button>
+        </form>
+      )}
       <Footer />
     </div>
   );

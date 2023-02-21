@@ -1,4 +1,10 @@
 h1 {
     font-family: 'Rye', cursive;
-    font-size: 3rem;
+    background-color: transparent;
+    font-size: 3.5rem;
+    color: transparent;
+    background: url('https://media.giphy.com/media/l41lPLQWi7uizf5qE/giphy.gif');
+    background-image: 5vw;
+    margin-right: 15vw;
+    -webkit-background-clip: text;
 }

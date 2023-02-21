@@ -1,11 +1,12 @@
+import roses from "../../assets/roses.png";
 import "./navbar.styles.css";
 
 const Navbar = () => {
-    return (
-        <div>
-            <h1>One from the Vault...</h1>
-        </div>
-    );
-}
+  return (
+    <div className="nav">
+      <h1>One from the Vault...</h1>
+    </div>
+  );
+};
 
 export default Navbar;
