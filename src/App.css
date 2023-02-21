@@ -6,9 +6,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-
 }
 
+.button {
+  border-radius: 5%;
+}
+
+button:hover {
+  background: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
+}
 
 
 @keyframes App-logo-spin {
