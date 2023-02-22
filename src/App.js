@@ -9,7 +9,7 @@ function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
   // "http://localhost:3000"
   // "https://play-dead.vercel.app/"
-  const REDIRECT_URI =   "http://localhost:3000";
+  const REDIRECT_URI =   "https://play-dead.vercel.app/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
