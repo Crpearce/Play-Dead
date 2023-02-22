@@ -7,12 +7,18 @@
   justify-content: space-around;
   align-items: center;
   background-color: black;
+  box-shadow: 0 .75rem 2rem black;
+  height: 18vh;
+}
+
+.signin {
+  color: white; 
 }
 
 button {
   align-items: center;
   background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
@@ -24,7 +30,7 @@ button {
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0;
+  margin-right: 2vw;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -43,6 +49,11 @@ button:hover {
   background: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
 }
 
+h3 {
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
 header {
   margin-left: 15vw;
 }
@@ -54,4 +65,20 @@ header {
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 600px){
+  .nav-container {
+    height:12vh;
+  }
+  .spotify-button {
+      width: 10vw;
+      height: 5vh;
+      font-size: .5rem;
+  }
+  .signin {
+    font-size: .5rem;
+  }
+
+
 }

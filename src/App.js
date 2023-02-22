@@ -9,7 +9,7 @@ function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
   // "http://localhost:3000"
   // "https://play-dead.vercel.app/"
-  const REDIRECT_URI = "https://play-dead.vercel.app/";
+  const REDIRECT_URI =   "http://localhost:3000";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
@@ -56,6 +56,7 @@ function App() {
     setAlbums(data.albums.items);
   };
 
+  console.log(token)
   return (
     <div className="App">
       <div
@@ -65,16 +66,16 @@ function App() {
         <header className="App-header">
           {!token ? (
             <a
-              href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+              href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} className='signin'
             >
               Login to Spotify
             </a>
           ) : (
-            <button onClick={logout}>Logout</button>
+            <button className='spotify-button' onClick={logout}>Logout</button>
           )}
         </header>
       </div>
-      <Album albums={albums} />
+      <Album albums={albums} token={token} />
       {albums.length === 0 && (
         <form onSubmit={searchArtists}>
           <button type={"submit"} onClick={(e) => setSearchKey(`Dick's Picks`)}>

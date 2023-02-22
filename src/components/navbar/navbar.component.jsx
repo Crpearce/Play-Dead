@@ -1,9 +1,18 @@
 import "./navbar.styles.css";
-
+import dye from '../../assets/dye.png'
 const Navbar = () => {
   return (
-    <div className="nav">
-      <h1>One from the Vault...</h1>
+    <div className="greeting">
+      <h1
+        style={{
+          backgroundImage: `url(${dye})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "55vh",
+        }}
+      >
+        Play Dead
+      </h1>
     </div>
   );
 };

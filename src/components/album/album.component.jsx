@@ -1,14 +1,13 @@
 import skull from "../../assets/skull.png";
-import { Link } from "react-router-dom";
+import SpotifyPlayer from 'react-spotify-web-playback';
 import "./album.styles.css";
 
-const Album = ({ albums }) => {
+const Album = ({ albums, token }) => {
   const randomNumber = () => {
     return Math.floor(Math.random() * 20);
   };
-  console.log(albums);
+
   const album = albums[randomNumber()];
-  console.log(album);
 
   return (
     <section>
@@ -22,7 +21,7 @@ const Album = ({ albums }) => {
         }}
       >
         {album && (
-          <a href={`${album.external_urls.spotify}`} target="_blank">
+          <a href={`${album.external_urls.spotify}`} target="_blank" rel="noreferrer">
             <img
               src={album.images[0].url}
               alt="album-cover"
@@ -33,6 +32,7 @@ const Album = ({ albums }) => {
       </div>
       {album && (
         <div className="album-details">
+        <SpotifyPlayer token={token} uris={album.uri}/>
           <h3 className="album-name">{album.name}</h3>
           <a className="album-tracks">Tracks:{album.total_tracks}</a>
           <br />

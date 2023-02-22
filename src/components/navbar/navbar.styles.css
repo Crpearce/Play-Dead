@@ -1,10 +1,15 @@
+
 h1 {
     font-family: 'Rye', cursive;
     background-color: transparent;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: transparent;
-    background: url('https://www.textileindie.com/wp-content/uploads/2016/12/Ice-dyeing-15-1.jpg');
-    /* background-image: 20vw; */
-    margin-right: 15vw;
     -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 600px){
+    h1 {
+        font-size: 3rem;
+        width: 70vw;
+    }
 }

@@ -1,9 +1,10 @@
 import "./footer.styles.css";
+import spotify from '../../assets/logos.png'
 
 const Footer = () => {
     return (
         <div>
-            <h4>Footer</h4>
+            <img src={spotify} alt='spotify logo' className="logo"/>
         </div>
     );
 }
