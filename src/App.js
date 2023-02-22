@@ -9,7 +9,7 @@ function App() {
   const CLIENT_ID = "a959c9fd78fb4067ab8a08680b4fd97e";
   // "http://localhost:3000"
   // "https://play-dead.vercel.app/"
-  const REDIRECT_URI =   "https://play-dead.vercel.app/";
+  const REDIRECT_URI = "https://play-dead.vercel.app/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
@@ -52,18 +52,16 @@ function App() {
         limit: 35,
       },
     });
-    console.log(data);
     setAlbums(data.albums.items);
   };
 
-  console.log(token)
   return (
     <div className="App">
       <div
         className="nav-container"
       >
         <Navbar />
-        <header className="App-header">
+        <header className="app-header">
           {!token ? (
             <a
               href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} className='signin'

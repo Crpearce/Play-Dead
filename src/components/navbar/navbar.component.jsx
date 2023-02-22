@@ -1,5 +1,6 @@
+import dye from "../../assets/dye.png";
 import "./navbar.styles.css";
-import dye from '../../assets/dye.png'
+
 const Navbar = () => {
   return (
     <div className="greeting">

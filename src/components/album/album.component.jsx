@@ -1,5 +1,5 @@
+import SpotifyPlayer from "../spotifyPlayer/spotifyPlayer.component";
 import skull from "../../assets/skull.png";
-import SpotifyPlayer from 'react-spotify-web-playback';
 import "./album.styles.css";
 
 const Album = ({ albums, token }) => {
@@ -8,6 +8,7 @@ const Album = ({ albums, token }) => {
   };
 
   const album = albums[randomNumber()];
+  console.log(album)
 
   return (
     <section>
@@ -32,9 +33,9 @@ const Album = ({ albums, token }) => {
       </div>
       {album && (
         <div className="album-details">
-        <SpotifyPlayer token={token} uris={album.uri}/>
+        <SpotifyPlayer token={token} uri={album.uri} size="large" them="black" view="list"/>
           <h3 className="album-name">{album.name}</h3>
-          <a className="album-tracks">Tracks:{album.total_tracks}</a>
+          <a className="album-tracks">Tracks: {album.total_tracks}</a>
           <br />
         </div>
       )}
