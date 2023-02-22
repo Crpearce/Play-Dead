@@ -1,15 +1,16 @@
-import dye from "../../assets/dye.png";
+import leather from "../../assets/leather.png";
 import "./navbar.styles.css";
 
 const Navbar = () => {
   return (
-    <div className="greeting">
+    <div>
       <h1
+      className='title'
         style={{
-          backgroundImage: `url(${dye})`,
+          backgroundImage: `url(${leather})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "55vh",
+          backgroundSize: "50vh",
         }}
       >
         Play Dead

@@ -7,6 +7,11 @@ h1 {
     -webkit-background-clip: text;
 }
 
+.title:hover {
+    background-image: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
+
+}
+
 @media screen and (max-width: 600px){
     h1 {
         font-size: 3rem;
