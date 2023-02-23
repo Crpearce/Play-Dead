@@ -7,7 +7,7 @@ h1 {
     -webkit-background-clip: text;
 }
 
-.title:hover {
+h1:hover {
     background-image: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
 
 }

@@ -10,7 +10,7 @@ const Navbar = () => {
           backgroundImage: `url(${leather})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "50vh",
+          backgroundSize: "70vh",
         }}
       >
         Play Dead
