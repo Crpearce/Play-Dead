@@ -42,13 +42,11 @@ button {
   width: auto;
 }
 
-
 button:hover {
   transform: translateY(-1px);
   background: url('https://media.giphy.com/media/xUPGcpa9lTpwu2l03e/giphy.gif');
   border-color: white;
 }
-
 
 header {
   margin-left: 15vw;
